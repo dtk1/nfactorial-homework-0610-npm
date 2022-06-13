@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css";
+</head>
+<script>
+    function setWhiteTheme(){
+        localStorage.setItem('theme', 'white');
+        const root = document.getElementById('container');
+        root.className = 'white';
+
+    }
+    function setDarkTheme(){
+        localStorage.setItem('theme', 'dark');
+        const root = document.getElementById('container');
+        root.className = 'dark';
+    }
+    function getValue(){
+        const theme = localStorage.getItem('theme');
+        const root = document.getElementById('container');
+        root.className = theme;
+    }
+    function setCookie(){
+        document.cookie = "user = Daulet; expires = Wed, 15 Jun 2022 6:00:00 GMT";
+    }
+</script>
+<body onload="getValue()">
+<div id="container" style="width:200vh; height: 100vh">
+    <h1>
+        <button onclick="setWhiteTheme()">Set light theme</button>
+    <button onclick="setDarkTheme()">Set dark theme</button>
+        <button onclick="setCookie()">Set cookiie</button>
+    </h1>
+
+</div>
+</body>
+</html>
